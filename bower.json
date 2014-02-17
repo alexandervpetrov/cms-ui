@@ -1,0 +1,17 @@
+{
+  "name": "cms-ui",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass-official": "~3",
+    "modernizr": "~2",
+    "jquery": "~2",
+    "requirejs": "~2",
+    "flight": "~1",
+    "es5-shim": "~2.3",
+    "hbs": "~0",
+    "underscore": "~1",
+    "jquery-observe": "~1",
+    "location-bar": "~2"
+  },
+  "devDependencies": {}
+}
