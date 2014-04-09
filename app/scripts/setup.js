@@ -3,7 +3,7 @@
 require.config({
 
   paths: {
-    jquery: '../bower_components/jquery/jquery',
+    jquery: '../bower_components/jquery/dist/jquery',
     bootstrapAffix: '../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix',
     bootstrapAlert: '../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert',
     bootstrapButton: '../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button',

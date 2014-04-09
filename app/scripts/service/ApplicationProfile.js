@@ -3,12 +3,12 @@
 define(
   [
     'flight/lib/component',
-    'mixin/ComponentHelpers',
+    'mixin/ComponentBasic',
   ],
 
-  function(defineComponent, ComponentHelpers) {
+  function(defineComponent, ComponentBasic) {
 
-    return defineComponent(Component, ComponentHelpers);
+    return defineComponent(Component, ComponentBasic);
 
     function Component() {
       

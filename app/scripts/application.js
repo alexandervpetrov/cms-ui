@@ -4,12 +4,12 @@ define(
   [
     'flight/lib/component',
     'underscore',
-    'mixin/ServiceManager',
+    'mixin/Application',
   ],
 
-  function(defineComponent, _, ServiceManager) {
+  function(defineComponent, _, Application) {
 
-    return defineComponent(Component, ServiceManager);
+    return defineComponent(Component, Application);
 
     function Component() {
       
@@ -20,20 +20,33 @@ define(
         return {
           name: 'app.Main',
           services: [
-            'ApplicationProfile',
-            'UserProfile',
-            'ApplicationManager',
+            'service.ApplicationProfile',
+            'service.UserProfile',
+            'service.Routing',
+            'service.LayoutManager',
           ],
         };
       };
       
-      this.onServicesStarted = function () {
-        this.trigger('app:services:started');
+      this.decideAboutLayout = function () {
+        var layout = 'layout.Default';
+        this.trigger(document, 'app:loadLayout', { name: layout });
+        
+        /*
+        var reload = function () {
+          this.trigger(document, 'app:loadLayout', { name: layout });
+          window.setTimeout(reload, 500);
+        }.bind(this);
+        reload();
+        */
+        
       };
-
+      
       this.after('initialize', function() {
         this.setup();
+        this.on('app:services:started', this.decideAboutLayout);
         this.run();
+        this.announceRunning();
       });
 
     };

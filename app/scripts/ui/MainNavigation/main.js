@@ -3,12 +3,13 @@
 define(
   [
     'flight/lib/component',
+    'mixin/ComponentBasic',
     'hbs!./content',
   ],
 
-  function(defineComponent, content) {
+  function(defineComponent, ComponentBasic, content) {
 
-    return defineComponent(Component);
+    return defineComponent(Component, ComponentBasic);
 
     function Component() {
       
@@ -22,8 +23,9 @@ define(
       };
  
       this.after('initialize', function() {
-        //console.log('ui.MainNavigation: initialize');
+        this.setup();
         this.on(document, 'data:mainNavigation', this.update);
+        this.announceRunning();
         this.trigger('ui:need:mainNavigation');
       });
 
