@@ -22,7 +22,6 @@ define(
       
       this.after('initialize', function() {
         this.setup();
-        //console.log('ui.ProjectInfo: initialize');
         this.on(document, 'data:applicationInfo', this.update);
         this.announceRunning();
         this.trigger('ui:need:applicationInfo');

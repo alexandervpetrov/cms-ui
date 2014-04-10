@@ -23,7 +23,6 @@ define(
  
       this.after('initialize', function() {
         this.setup();
-        //console.log('ui.PageNavigation: initialize');
         this.on(document, 'data:pageNavigation', this.update);
         this.announceRunning();
         this.trigger('ui:need:pageNavigation');

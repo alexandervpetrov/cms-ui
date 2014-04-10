@@ -24,7 +24,6 @@ define(
  
       this.after('initialize', function() {
         this.setup();
-        //console.log('ui.UserNavigation: initialize');
         this.on(document, 'data:userInfo', this.update);
         this.announceRunning();
         this.trigger('ui:need:userInfo');
